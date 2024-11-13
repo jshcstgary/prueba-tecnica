@@ -1,0 +1,35 @@
+<div class="titles">
+	<p>Módulo de Administración</p>
+
+	<h1>Administración de usuarios</h1>
+</div>
+
+<div class="header">
+	<div class="header-filters">
+		<mat-form-field>
+			<mat-label>Seleccione un Departamento</mat-label>
+
+			<mat-select>
+				@for (departamento of departamentos; track $index) {
+					<mat-option [value]="departamento.id">
+						{{ departamento.nombre }}
+					</mat-option>
+				}
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field>
+			<mat-label>Seleccione un Cargo</mat-label>
+
+			<mat-select>
+				@for (cargo of cargos; track $index) {
+					<mat-option [value]="cargo.id">
+						{{ cargo.nombre }}
+					</mat-option>
+				}
+			</mat-select>
+		</mat-form-field>
+	</div>
+
+	<button mat-flat-button color="primary" (click)="openDialog()">Crear nuevo usuario</button>
+</div>
